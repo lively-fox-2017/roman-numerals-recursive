@@ -99,10 +99,10 @@ function to_roman(input) {
   }
   arrInput = preProcessing(input);
   urutanProses = stackProcess(arrInput);
-  var counter = 0;
+
 
   output+= converter(arrInput.shift(), urutanProses.shift());
-  counter+=1;
+
 
   if (urutanProses.length==0){
     return output;
