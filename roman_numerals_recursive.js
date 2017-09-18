@@ -1,6 +1,18 @@
 function to_roman(input) {
-  // start your code here
-  return to_roman(input); 
+  let dec=[1000,900,500,400,100,90,50,40,10,9,5,4,1]
+  let roman=['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I']
+
+  if(input<1){//stoppper
+    return ''
+  }else{
+    for(let i=0;i<dec.length;i++){//ngecek apakah i<pjg dec
+      // console.log(dec.length);
+      if(input>=dec[i]){
+        // console.log(dec[i]);
+        return roman[i]+to_roman(input-dec[i])
+      }
+    }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
