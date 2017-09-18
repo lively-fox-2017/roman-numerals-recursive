@@ -1,6 +1,24 @@
 function to_roman(input) {
   // start your code here
-  return to_roman(input); 
+   var roman = ['M', 'D', 'CD', 'C', 'L', 'XL', 'X',  'IX', 'V','IV', 'I'];
+  var angka =  [1000, 500, 400, 100, 50, 40, 10, 9, 5, 4,1];
+  var result = '';
+
+ 	if(input === 0){
+ 		return result;
+ 	}else{
+
+ 	for(var i = 0; i < angka.length; i++){
+ 		// console.log('angka dikurang',input%angka[i] + ' ' + 'input '+input)
+ 		while( input % angka[i] < input){
+ 			result += roman[i];
+ 			input -= angka[i];
+ 			// console.log(roman)
+ 			return result + to_roman(input);
+ 		}	
+ 	}
+ }
+
 }
 
 console.log('My totally sweet testing script for new roman\n')
