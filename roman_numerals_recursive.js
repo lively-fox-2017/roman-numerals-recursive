@@ -1,6 +1,26 @@
 function to_roman(input) {
-  // start your code here
-  return to_roman(input); 
+  var
+  //siapkan array angka unik
+  angka=[1000,900,500,400,100,90,50,40,10,9,5,4,1],
+  //siapkan array angka roman
+  roman=['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'],
+  //siapkan variabel tampung berupa output
+  output='';
+
+  //cek kondisi jika input === 0
+  if (input===0) {
+    //return ''
+    return '';
+  } else {
+    //lakukan perulangan sebanyak pannjang array angka unik
+    for (var i = 0; i < angka.length; i++) {
+      //cek jika input >= angka[i]
+      if (input>=angka[i]) {
+        //return roman+toRomanRecursive(input-angka[i])
+        return roman[i]+to_roman(input-angka[i]);
+      }
+    }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
