@@ -1,6 +1,33 @@
 function to_roman(input) {
   // start your code here
-  return to_roman(input); 
+  var roman = {
+    "M" : 1000,
+    "CM" : 900,
+    "D" : 500,
+    "CD" : 400,
+    "C" : 100,
+    "XC" : 90,
+    "L" : 50,
+    "XL" : 40,
+    "X" : 10,
+    "IX" : 9,
+    "V" : 5,
+    "IV" : 4,
+    "I" : 1,
+  };
+
+  var result = '';
+  for (var prop in roman) {
+    if (input === 0){
+      return result;
+    }
+    else if(input >= roman[prop]){
+      result += prop;
+      input -= roman[prop]
+      // console.log(result);
+      return result + to_roman(input);
+    }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
