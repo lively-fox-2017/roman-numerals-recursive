@@ -1,6 +1,16 @@
 function to_roman(input) {
-  // start your code here
-  return to_roman(input); 
+  let latin= [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  let romawi=['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+	if(input==0){ // base case untuk stop
+		return '';
+	}else{
+		for(i=0; i<latin.length; i++){ // looping sebanyak panjang array latin
+			if(input >= latin[i]) { // jika inputan masih kurang dari array latin ke i, maka
+				return romawi[i] + to_roman(input-latin[i]); // return kan nilai romawi ke i + hasil dari fungsi to_roman (recursifnya)
+			}
+		}
+	}
+return to_roman(input);
 }
 
 console.log('My totally sweet testing script for new roman\n')
