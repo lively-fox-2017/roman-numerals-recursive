@@ -1,6 +1,30 @@
 function to_roman(input) {
   // start your code here
-  return to_roman(input); 
+  var pola = [
+    [1000, 'M'],
+    [900, 'CM'],
+    [500, 'D'],
+    [400, 'CD'],
+    [100, 'C'],
+    [90, 'XC'],
+    [50, 'L'],
+    [40, 'XL'],
+    [10, 'X'],
+    [9, 'IX'],
+    [5, 'V'],
+    [4, 'IV'],
+    [1, 'I']
+  ];
+
+  var roman = '';
+  for (var i = 0; i < pola.length; i++) {
+    if (input === 0) {
+      return roman;
+    } else if (input >= pola[i][0]) {
+      roman += pola[i][1];
+      return roman + to_roman(input -= pola[i][0]);
+    }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
